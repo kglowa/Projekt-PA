@@ -1,0 +1,16 @@
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+
+const AdresScreen = ({ navigation }) => {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Adres Screen</Text>
+        <Button
+          title="idz do home"
+          onPress={() => navigation.navigate("Home")}
+        />
+      </View>
+    );
+  }
+
+  export default AdresScreen;

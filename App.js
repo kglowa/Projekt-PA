@@ -1,94 +1,71 @@
-import React from 'react';
-import { StyleSheet, Button, View, SafeAreaView,Image, Alert } from 'react-native';
+import * as React from 'react';
+import { View, Text, Button,SafeAreaView, StyleSheet, ScrollView, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
+import HomeScreen from './screens/HomeScreen';
+import KontaktScreen from './screens/KontaktScreen';
+import AdresScreen from './screens/AdresScreen';
+import PomocScreen from './screens/PomocScreen';
 
-const App = () => (
-  <SafeAreaView style={styles.container}>
-    <Image
-      style={{width:300,height:300,marginLeft:50,bottom:100}}
-      resizeMode = "contain"
-      
-      source = {require('./icons/logo.png')}
-      />
-    <View>
-      
-      <Button
-        title="Menu"
-        color="#800000"
-        onPress={() => Alert.alert('W trakcie...')}
-      />
-    </View>
-    <Separator />
-    <View>
-    
-      <Button
-        title="Rezerwacje"
-        color="#800000"
-        onPress={() => Alert.alert('W trakcie...')}
-      />
-    </View>
-    <Separator />
-    <View>
-      
-      <Button
-        title="Zamowienia"
-        color="#800000"
-        onPress={() => Alert.alert('W trakcie...')}
-      />
-    </View>
-    <Separator />
-   
-    <View>
-      
-        <Button
-          title="Rachunki"
-          color="#800000"
-          onPress={() => Alert.alert('W trakcie...')}
-        />
-        </View>
-    <Separator />
-    <View>
-        <Button
-          title="Grafik"
-          color="#800000"
-          onPress={() => Alert.alert('W trakcie...')}
-        />
-        </View>
-    <Separator />
-    <View>
-         <Button
-          title="Czas pracy"
-          color="#800000"
-          onPress={() => Alert.alert('W trakcie...')}
-        />
-        </View>
-    <Separator />
-   
-    
-  </SafeAreaView>
-);
-
-const styles = StyleSheet.create({
-  container: {
-    marginTop:150,
-    flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
-  },
-  title: {
-    textAlign: 'center',
-    marginVertical: 8,
-  },
+const HomeStack = createNativeStackNavigator();
+const MenuStack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+{/*
+const HomeStackScreen =({navigation}) =>(
+  <HomeStack.Navigator screenOptions={{
+          headerStyle: {
+            backgroundColor: '#800000',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold'
+          }
+        }} >
+          <HomeStack.Screen name="Home" component={HomeScreen} />
+        </HomeStack.Navigator>
+  );
   
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-  
-});
+  const MenuStackScreen =({navigation}) =>(
+    <MenuStack.Navigator screenOptions={{
+            headerStyle: {
+              backgroundColor: '#800000',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+              fontWeight: 'bold'
+            }
+          }} >
+            <MenuStack.Screen name="Menu" component={MenuScreen} />
+          </MenuStack.Navigator>
+    );
+        */}
+
+
+const App = () => {
+  return (
+    <NavigationContainer> 
+      <Drawer.Navigator initialRouteName="Home" screenOptions={{
+        headerStyle: {
+          backgroundColor: '#800000',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold'
+        }
+      }}>
+        <Drawer.Screen name="Home" component={HomeScreen} options={{
+          title: 'Strona główna',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }} />
+        <Drawer.Screen name="Kontakt" component={KontaktScreen} />
+        <Drawer.Screen name="Adres" component={AdresScreen} />
+        <Drawer.Screen name="Pomoc" component={PomocScreen} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
