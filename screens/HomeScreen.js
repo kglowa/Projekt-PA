@@ -1,21 +1,21 @@
 import * as React from 'react';
-import { View, Text, Button,SafeAreaView, StyleSheet, ScrollView, Alert, StatusBar } from 'react-native';
-import MenuScreen from './MenuScreen';
+import { View, Text,Image, Button,SafeAreaView, StyleSheet, ScrollView, Alert, StatusBar } from 'react-native';
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
+
 const HomeScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <SafeAreaView style={styles.container}>
-      {/*<Image
-      style={{width:300,height:300,marginLeft:50,bottom:100}}
+      <Image
+      style={{width:300,height:300,marginLeft:10,bottom:100}}
       resizeMode = "contain"
       
-      source = {require('./icons/logo.png')}
-      />*/}
+      source = {require('../icons/logo.png')}
+      />
         <View>
           <Button
             title="Menu"
@@ -29,7 +29,7 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Rezerwacje"
             color="#800000"
-            onPress={() => Alert.alert('W trakcie...')}
+            onPress={() => navigation.navigate("Rezerwacje")}
           />
         </View>
         <Separator />
@@ -38,7 +38,7 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Zamowienia"
             color="#800000"
-            onPress={() => Alert.alert('W trakcie...')}
+            onPress={() => navigation.navigate("Zamowienia")}
           />
         </View>
         <Separator />
@@ -48,7 +48,7 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Rachunki"
             color="#800000"
-            onPress={() => Alert.alert('W trakcie...')}
+            onPress={() => navigation.navigate("Rachunki")}
           />
         </View>
         <Separator />
@@ -56,7 +56,7 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Grafik"
             color="#800000"
-            onPress={() => Alert.alert('W trakcie...')}
+            onPress={() => navigation.navigate("Grafik")}
           />
         </View>
         <Separator />
