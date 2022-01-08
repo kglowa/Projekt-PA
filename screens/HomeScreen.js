@@ -54,9 +54,9 @@ const HomeScreen = ({ navigation }) => {
         <Separator />
         <View>
           <Button
-            title="Grafik"
+            title="Wyloguj"
             color="#800000"
-            onPress={() => navigation.navigate("Grafik")}
+            onPress={() => navigation.navigate("Login")}
           />
         </View>
         <Separator />

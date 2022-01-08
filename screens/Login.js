@@ -5,7 +5,8 @@ import{
     View,
     TextInput,
     KeyboardAvoidingView,
-    TouchableOpacity
+    TouchableOpacity,
+    AsyncStorage
 } from 'react-native';
 
 
@@ -32,9 +33,9 @@ export default class Login extends React.Component{
 
     render(){
         return(
-            <KeyboardAvoidingView behavior='padding' style={style.wrapper}>
-                <View style={atyles.container}>
-                    <Text style={style.header}>LOGOWANIE</Text>
+            <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
+                <View style={styles.container}>
+                    <Text style={styles.header}>LOGOWANIE</Text>
 
                     <TextInput
                         style={styles.textInput} placeholder='Login'
@@ -49,7 +50,7 @@ export default class Login extends React.Component{
                     />
 
                     <TouchableOpacity
-                        style={style.btn}
+                        style={styles.btn}
                         onPress={this.login}>
                         <Text>Zaloguj</Text>
                     </TouchableOpacity>
@@ -59,7 +60,7 @@ export default class Login extends React.Component{
         );
     }
     login = () =>{
-        alert('text');
+        this.props.navigation.navigate('Home');
     }
 }
 
