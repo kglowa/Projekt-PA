@@ -8,6 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import KontaktScreen from './screens/KontaktScreen';
 import AdresScreen from './screens/AdresScreen';
 import PomocScreen from './screens/PomocScreen';
+import LoginScreen from './screens/Login';
 
 const HomeStack = createNativeStackNavigator();
 const MenuStack = createNativeStackNavigator();
