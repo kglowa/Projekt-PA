@@ -1,16 +1,55 @@
-import * as React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, {useState} from 'react';
+import { Keyboard, ScrollView, StyleSheet, Text, View } from 'react-native';
+import TaskInputField from '../components/TaskInputField';
+import TaskItem from '../components/TaskItem';
 
-const ZamowieniaScreen = ({ navigation }) => {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Zamówienia</Text>
-        <Button
-          title="idz do home"
-          onPress={() => navigation.navigate("Home")}
-        />
-      </View>
-    );
+export default function ZamowieniaScreen() {
+  const [tasks, setTasks] = useState([]);
+
+  const addTask = (task) => {
+    if (task == null) return;
+    setTasks([...tasks, task]);
+    Keyboard.dismiss();
   }
 
-  export default ZamowieniaScreen;
+  const deleteTask = (deleteIndex) => {
+    setTasks(tasks.filter((value, index) => index != deleteIndex));
+  }
+
+  return (
+    <View style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+        {
+        tasks.map((task, index) => {
+          return (
+            <View key={index} style={styles.taskContainer}>
+              <TaskItem index={index + 1} task={task} deleteTask={() => deleteTask(index)}/>
+            </View>
+          );
+        })
+      }
+      </ScrollView>
+      <TaskInputField addTask={addTask}/>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  heading: {
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: '600',
+    marginTop: 30,
+    marginBottom: 10,
+    marginLeft: 20,
+  },
+  scrollView: {
+    marginBottom: 70,
+  },
+  taskContainer: {
+    marginTop: 20,
+  }
+});

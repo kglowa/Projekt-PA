@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import{
     StyleSheet,
@@ -33,6 +35,7 @@ export default class Login extends React.Component{
 
     render(){
         return(
+
             <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
                 <View style={styles.container}>
                     <Text style={styles.header}>LOGOWANIE</Text>
@@ -45,6 +48,7 @@ export default class Login extends React.Component{
 
                     <TextInput
                         style={styles.textInput} placeholder='Haslo'
+                        secureTextEntry={true}
                         onChangeText={(password)=> this.setState({password})}
                         underlineColorAndroid='transparent'
                     />

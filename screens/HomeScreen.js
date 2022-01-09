@@ -1,17 +1,23 @@
 import * as React from 'react';
+import { render } from 'react-dom';
 import { View, Text,Image, Button,SafeAreaView, StyleSheet, ScrollView, Alert, StatusBar } from 'react-native';
+
 
 const Separator = () => (
   <View style={styles.separator} />
 );
 
 
+
 const HomeScreen = ({ navigation }) => {
+  
+
   return (
+   
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <SafeAreaView style={styles.container}>
       <Image
-      style={{width:300,height:300,marginLeft:10,bottom:100}}
+      style={{width:300,height:200,marginLeft:10,bottom:100,marginTop:120}}
       resizeMode = "contain"
       
       source = {require('../icons/logo.png')}
@@ -52,14 +58,7 @@ const HomeScreen = ({ navigation }) => {
           />
         </View>
         <Separator />
-        <View>
-          <Button
-            title="Wyloguj"
-            color="#800000"
-            onPress={() => navigation.navigate("Login")}
-          />
-        </View>
-        <Separator />
+        
         <View>
           <Button
             title="Czas pracy"
@@ -68,13 +67,21 @@ const HomeScreen = ({ navigation }) => {
           />
         </View>
         <Separator />
+        <View>
+          <Button
+            title="Wyloguj"
+            color="#800000"
+            onPress={() => navigation.navigate("Login")}
+          />
+        </View>
+        <Separator />
       </SafeAreaView>
     </View>
   );
+
 }
 const styles = StyleSheet.create({
   container: {
-    marginTop:150,
     flex: 1,
     justifyContent: 'center',
     marginHorizontal: 16,
