@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 
-const RezerwacjeScreen = ({ navigation }) => {
+const Czas_PracyScreen = ({ navigation }) => {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Rezerwacje</Text>
-       
+        <Text>Czas_pracy</Text>
       </View>
     );
   }
 
-  export default RezerwacjeScreen;
+  export default Czas_PracyScreen;

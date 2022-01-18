@@ -28,7 +28,7 @@ export default TaskInputField = (props) => {
 const styles = StyleSheet.create({
     container: {
         borderColor: '#fff',
-        backgroundColor: '#800000',
+        backgroundColor: '#d94214',
         borderWidth: 1,
         marginHorizontal: 20,
         borderRadius: 12,
