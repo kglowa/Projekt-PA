@@ -12,7 +12,7 @@ const Login = () => {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
-                navigation.replace("Home")
+                navigation.replace("CieKawa")
             }
         })
 
@@ -28,7 +28,7 @@ const Login = () => {
             })
             .catch(error => alert(error.message))
     }
-
+  
     return (
 
         <KeyboardAvoidingView
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     image: {
         width: 200,
         height: 200,
-        marginTop: -240,
+        marginTop: 10,
     },
     inputContainer: {
         width: '80%'
@@ -91,13 +91,13 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 5,
-        marginTop: -200,
+        marginTop: 20,
     },
     buttonContainer: {
         width: '60%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 40,
+        marginTop: 100,
     },
     button: {
         backgroundColor: '#d94214',
@@ -105,6 +105,7 @@ const styles = StyleSheet.create({
         padding: 15,
         borderRadius: 10,
         alignItems: 'center',
+        marginBottom: 100
     },
     buttonText: {
         color: 'white',

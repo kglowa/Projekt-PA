@@ -4,13 +4,13 @@ import * as React from 'react';
 import { View, Text, Button } from 'react-native';
 
 
-const MenuScreen = ({  }) => {
+const BeerScreen = ({  }) => {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Menu Screen</Text>
+        <Text>Beer Screen</Text>
       </View>
       
     );
   }
 
-  export default MenuScreen;
+  export default BeerScreen;

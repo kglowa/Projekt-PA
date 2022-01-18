@@ -25,7 +25,7 @@ const HomeScreen = ({ navigation }) => {
         <View>
           <Button
             title="Menu"
-            color="#800000"
+            color="#d94214"
             onPress={() => navigation.navigate("Menu")}
           />
         </View>
@@ -34,7 +34,7 @@ const HomeScreen = ({ navigation }) => {
 
           <Button
             title="Rezerwacje"
-            color="#800000"
+            color="#d94214"
             onPress={() => navigation.navigate("Rezerwacje")}
           />
         </View>
@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation }) => {
 
           <Button
             title="Zamowienia"
-            color="#800000"
+            color="#d94214"
             onPress={() => navigation.navigate("Zamowienia")}
           />
         </View>
@@ -53,7 +53,7 @@ const HomeScreen = ({ navigation }) => {
 
           <Button
             title="Rachunki"
-            color="#800000"
+            color="#d94214"
             onPress={() => navigation.navigate("Rachunki")}
           />
         </View>
@@ -62,17 +62,18 @@ const HomeScreen = ({ navigation }) => {
         <View>
           <Button
             title="Czas pracy"
-            color="#800000"
-            onPress={() => Alert.alert('W trakcie...')}
+            color="#d94214"
+            onPress={() => navigation.navigate("Czas pracy")}
           />
         </View>
         <Separator />
         <View>
           <Button
             title="Wyloguj"
-            color="#800000"
+            color="#d94214"
             onPress={() => navigation.navigate("Login")}
-          />
+
+            />
         </View>
         <Separator />
       </SafeAreaView>
