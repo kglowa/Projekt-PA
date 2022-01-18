@@ -1,101 +1,114 @@
+import { useNavigation } from '@react-navigation/core'
+import React, { useEffect, useState } from 'react'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
+import { auth } from '../firebase'
 
+const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-import React from 'react';
-import{
-    StyleSheet,
-    Text,
-    View,
-    TextInput,
-    KeyboardAvoidingView,
-    TouchableOpacity,
-    AsyncStorage
-} from 'react-native';
+    const navigation = useNavigation()
 
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                navigation.replace("Home")
+            }
+        })
 
-export default class Login extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: '',
-            password: '',
+        return unsubscribe
+    }, [])
 
-        }
+    const handleLogin = () => {
+        auth
+            .signInWithEmailAndPassword(email, password)
+            .then(userCredentials => {
+                const user = userCredentials.user;
+                console.log('Logged in with:', user.email);
+            })
+            .catch(error => alert(error.message))
     }
 
-    componentDidMount() {
-        this._loadInitialState().done();
-    }
+    return (
 
-    _loadInitialState = async() => {
-        var value = await AsyncStorage.getItem('user');
-        if (value !== null){
-            this.props.navigation.navigate('Profile');
-        }
-    }
+        <KeyboardAvoidingView
+            style={styles.container}
+            behavior="padding"
+        >
+            <View style={styles.container}>
+                <Image
+                    source={require("../icons/logo.png")}
+                    resizeMode="contain"
+                    style={styles.image}
+                ></Image>
+            </View>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    placeholder="Email"
+                    value={email}
+                    onChangeText={text => setEmail(text)}
+                    style={styles.input}
+                />
+                <TextInput
+                    placeholder="Password"
+                    value={password}
+                    onChangeText={text => setPassword(text)}
+                    style={styles.input}
+                    secureTextEntry
+                />
+            </View>
 
-    render(){
-        return(
-
-            <KeyboardAvoidingView behavior='padding' style={styles.wrapper}>
-                <View style={styles.container}>
-                    <Text style={styles.header}>LOGOWANIE</Text>
-
-                    <TextInput
-                        style={styles.textInput} placeholder='Login'
-                        onChangeText={(username)=> this.setState({username})}
-                        underlineColorAndroid='transparent'
-                    />
-
-                    <TextInput
-                        style={styles.textInput} placeholder='Haslo'
-                        secureTextEntry={true}
-                        onChangeText={(password)=> this.setState({password})}
-                        underlineColorAndroid='transparent'
-                    />
-
-                    <TouchableOpacity
-                        style={styles.btn}
-                        onPress={this.login}>
-                        <Text>Zaloguj</Text>
-                    </TouchableOpacity>
-
-                </View>
-            </KeyboardAvoidingView>
-        );
-    }
-    login = () =>{
-        this.props.navigation.navigate('Home');
-    }
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                    onPress={handleLogin}
+                    style={styles.button}
+                >
+                    <Text style={styles.buttonText}>Zaloguj</Text>
+                </TouchableOpacity>
+            </View>
+        </KeyboardAvoidingView>
+    )
 }
 
+export default Login
+
 const styles = StyleSheet.create({
-   wrapper:{
-       flex: 1,
-   },
-    container:{
-       flex: 1,
-       alignItems: 'center',
-       justifyContent: 'center',
-       backgroundColor: 'white',
-       paddingLeft: 40,
-       paddingRight: 40,
-    },
-    header:{
-       fontSize: 24,
-        marginBottom: 60,
-        color: 'black',
-        fontWeight: 'bold',
-    },
-    textInput:{
-        alignSelf: 'stretch',
-        padding: 16,
-        marginBottom: 20,
-        backgroundColor: 'white',
-    },
-    btn:{
-        alignSelf: 'stretch',
-        backgroundColor: '#d7ccc8',
-        padding: 20,
+    container: {
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
-    }
-});
+    },
+    image: {
+        width: 200,
+        height: 200,
+        marginTop: -240,
+    },
+    inputContainer: {
+        width: '80%'
+    },
+    input: {
+        backgroundColor: 'white',
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderRadius: 5,
+        marginTop: -200,
+    },
+    buttonContainer: {
+        width: '60%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40,
+    },
+    button: {
+        backgroundColor: '#d94214',
+        width: '100%',
+        padding: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: '700',
+        fontSize: 16,
+    },
+})
