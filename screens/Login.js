@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity,Platform, View, Image } from 'react-native'
 import { auth } from '../firebase'
 
 const Login = () => {
@@ -32,8 +32,8 @@ const Login = () => {
     return (
 
         <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
             style={styles.container}
-            behavior="padding"
         >
             <View style={styles.container}>
                 <Image
@@ -74,6 +74,7 @@ export default Login
 
 const styles = StyleSheet.create({
     container: {
+        marginTop:25,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
@@ -81,9 +82,10 @@ const styles = StyleSheet.create({
     image: {
         width: 200,
         height: 200,
-        marginTop: 10,
+        marginTop: 250,
     },
     inputContainer: {
+        marginTop:200,
         width: '80%'
     },
     input: {
@@ -97,15 +99,15 @@ const styles = StyleSheet.create({
         width: '60%',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 100,
+        marginTop: 70,
     },
     button: {
         backgroundColor: '#d94214',
         width: '100%',
-        padding: 15,
+        padding: 10,
         borderRadius: 10,
         alignItems: 'center',
-        marginBottom: 100
+        marginBottom: 150
     },
     buttonText: {
         color: 'white',

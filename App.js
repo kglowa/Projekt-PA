@@ -32,7 +32,7 @@ function MyTab(){
             tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'flex-end', justifyContent: 'center'}}>
                         <Image
-                        source ={require('../Projekt-PA/icons/drink.png')}
+                        source ={require('./icons/drink.png')}
                         resizeMode="contain"
                         style={{
                             width: 30,
@@ -57,7 +57,7 @@ function MyTab(){
             tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'flex-start', justifyContent: 'center'}}>
                         <Image
-                        source ={require('../Projekt-PA/icons/menuMain.png')}
+                        source ={require('./icons/menuMain.png')}
                         resizeMode="contain"
                         style={{
                             width: 30,
@@ -82,7 +82,7 @@ function MyTab(){
             tabBarIcon:({focused}) => (
                     <View style={{alignItems: 'flex-start', justifyContent: 'center'}}>
                         <Image
-                        source ={require('../Projekt-PA/icons/beer.jpg')}
+                        source ={require('./icons/beer.jpg')}
                         resizeMode="contain"
                         style={{
                             width: 30,
