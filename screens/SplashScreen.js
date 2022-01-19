@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, Text,Image, Button,SafeAreaView, StyleSheet } from 'react-native';
+import * as Haptics from 'expo-haptics';
 
 
 const SplashScreen = ({ navigation }) => {
@@ -21,7 +22,7 @@ const SplashScreen = ({ navigation }) => {
             title="Start"
             color="#800000"
 
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Login")}}
           />
         </View>
       </SafeAreaView>
