@@ -5,3 +5,5 @@ haslo: admin321
 35 linijka zmnienic na source ={require('./icons/drink.png')}
 60 linijka zmnienic na source ={require('./icons/menuMain.png')}
 85 linijka zmnienic na source ={require('./icons/beer.jpg')}
+
+expo install expo-haptics
