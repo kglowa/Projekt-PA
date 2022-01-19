@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { render } from 'react-dom';
-import { View, Text,Image, Button,SafeAreaView, StyleSheet, ScrollView, Alert, StatusBar } from 'react-native';
+import { View, Text, Image, Button, SafeAreaView, StyleSheet, ScrollView, Alert, StatusBar } from 'react-native';
+import { auth } from '../firebase';
 import * as Haptics from 'expo-haptics';
 
 
@@ -11,23 +12,23 @@ const Separator = () => (
 
 
 const HomeScreen = ({ navigation }) => {
-  
+
 
   return (
-   
+
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <SafeAreaView style={styles.container}>
-      <Image
-      style={{width:300,height:200,marginLeft:10,bottom:100,marginTop:120}}
-      resizeMode = "contain"
-      
-      source = {require('../icons/logo.png')}
-      />
+        <Image
+          style={{ width: 300, height: 200, marginLeft: 10, bottom: 100, marginTop: 120 }}
+          resizeMode="contain"
+
+          source={require('../icons/logo.png')}
+        />
         <View>
           <Button
             title="Menu"
             color="#d94214"
-            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Menu")}}
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Menu") }}
           />
         </View>
         <Separator />
@@ -36,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Rezerwacje"
             color="#d94214"
-            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Rezerwacje")}}
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Rezerwacje") }}
           />
         </View>
         <Separator />
@@ -45,9 +46,10 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Zamowienia"
             color="#d94214"
-            onPress={() =>{
+            onPress={() => {
               navigation.navigate("Zamowienia");
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)}}
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)
+            }}
           />
         </View>
         <Separator />
@@ -57,16 +59,16 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Rachunki"
             color="#d94214"
-            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Rachunki")}}
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Rachunki") }}
           />
         </View>
         <Separator />
-        
+
         <View>
           <Button
             title="Czas pracy"
             color="#d94214"
-            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Czas pracy")}}
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Czas pracy") }}
           />
         </View>
         <Separator />
@@ -74,9 +76,18 @@ const HomeScreen = ({ navigation }) => {
           <Button
             title="Wyloguj"
             color="#d94214"
-            onPress={() => {Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);navigation.navigate("Login")}}
+            onPress={() => {
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy);
+              auth.signOut()
+                .then(() => {
+                  console.log('Logged out');
+                  navigation.navigate("Login", { loggedOut: true })
+                })
+                .catch(error => {console.log('Logout failed'+error);})
+              
+            }}
 
-            />
+          />
         </View>
         <Separator />
       </SafeAreaView>
@@ -94,12 +105,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginVertical: 8,
   },
-  
+
   separator: {
     marginVertical: 8,
     borderBottomColor: '#737373',
     borderBottomWidth: StyleSheet.hairlineWidth,
   },
-  
+
 });
 export default HomeScreen;

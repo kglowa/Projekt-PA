@@ -1,15 +1,18 @@
 import { useNavigation } from '@react-navigation/core'
 import React, { useEffect, useState } from 'react'
-import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity,Platform, View, Image } from 'react-native'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity,Platform, View, Image, Alert } from 'react-native'
 import { auth } from '../firebase'
 
-const Login = () => {
+const Login = ({route}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const navigation = useNavigation()
 
     useEffect(() => {
+        if(route.params && route.params.loggedOut){
+            Alert.alert("Informacja","Wylogowano pomyślnie!"); 
+        }      
         const unsubscribe = auth.onAuthStateChanged(user => {
             if (user) {
                 navigation.replace("CieKawa")
@@ -28,6 +31,7 @@ const Login = () => {
             })
             .catch(error => alert(error.message))
     }
+   
   
     return (
 
