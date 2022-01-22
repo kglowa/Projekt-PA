@@ -108,7 +108,19 @@ function MyTab(){
     const Drawer = createDrawerNavigator();
 function MyDrawer(){
     return(
-    <Drawer.Navigator initialRouteName="CieKawa">
+    <Drawer.Navigator initialRouteName="CieKawa"
+    screenOptions={{
+        
+        drawerActiveTintColor: "#000000",
+        drawerStyle:{
+            backgroundColor:"#d94214",
+            width: 180,
+        
+        },
+        
+       
+    }}
+    >
         <Drawer.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
         <Drawer.Screen  name="Menu" component={MyTab} />
         <Drawer.Screen  name="Rezerwacje" component={RezerwacjeScreen} />
