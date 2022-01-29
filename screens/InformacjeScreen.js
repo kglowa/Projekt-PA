@@ -25,12 +25,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#C24F37'
+    backgroundColor: 'white'
   },
-  image: {
-    marginTop: 50,
-    marginBottom: 50,
-  },
+    image: {
+        width: 250,
+        height: 250,
+        marginTop: 50,
+    },
   pierwsze: {
     color: 'black',
     fontWeight: 'bold',

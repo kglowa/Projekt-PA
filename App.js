@@ -13,7 +13,6 @@ import RachunkiScreen from './screens/RachunkiScreen';
 import GrafikScreen from './screens/GrafikScreen';
 import InformacjeScreen from './screens/InformacjeScreen';
 import DrinkScreen from './screens/DrinkScreen';
-import SplashScreen from './screens/SplashScreen';
 import BeerScreen from './screens/BeerScreen';
 
 const Tab = createBottomTabNavigator();
@@ -110,17 +109,17 @@ const Drawer = createDrawerNavigator();
 function MyDrawer() {
     return (
         <Drawer.Navigator initialRouteName="CieKawa"
-            screenOptions={{
+                          screenOptions={{
 
-                drawerActiveTintColor: "#000000",
-                drawerStyle: {
-                    backgroundColor: "#d94214",
-                    width: 180,
+                              drawerActiveTintColor: "#000000",
+                              drawerStyle: {
+                                  backgroundColor: "#d94214",
+                                  width: 180,
 
-                },
+                              },
 
 
-            }}
+                          }}
         >
             <Drawer.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
             <Drawer.Screen name="Menu" component={MyTab} />
@@ -140,7 +139,6 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen options={{ headerShown: false }} name="SplashScreen" component={SplashScreen} />
                 <Stack.Screen options={{ headerShown: false }} name="Login" component={LoginScreen} />
                 <Stack.Screen options={{ headerShown: false }} name="CieKawa" component={MyDrawer} />
             </Stack.Navigator>

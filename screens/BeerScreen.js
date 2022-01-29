@@ -93,13 +93,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderRadius: 3,
     flexDirection: 'row',
-      marginHorizontal: 20,
-      
+    marginHorizontal: 20,
+
   },
   item: {
     padding: 12,
-    marginVertical: 6,
-    marginHorizontal: 20,
+    marginVertical: 3,
+    marginHorizontal: 10,
+    borderRadius:15,
+    alignItems:'center'
   },
   title: {
     fontSize: 20,
