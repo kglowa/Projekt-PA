@@ -38,19 +38,14 @@ function MyTab() {
                                     width: 30,
                                     height: 30,
                                     tintColor: focused ? '#d94214' : '#000000',
-
-
                                 }}
                             />
-
-
                         </View>
                     ),
-
                 }}
             />
             <Tab.Screen
-                name="Menu"
+                name="Karta"
                 component={MenuScreen}
                 options={{
                     headerShown: false,
@@ -63,15 +58,10 @@ function MyTab() {
                                     width: 30,
                                     height: 30,
                                     tintColor: focused ? '#d94214' : '#000000',
-
-
                                 }}
                             />
-
-
                         </View>
                     ),
-
                 }}
             />
             <Tab.Screen
@@ -88,38 +78,27 @@ function MyTab() {
                                     width: 30,
                                     height: 30,
                                     tintColor: focused ? '#d94214' : '#000000',
-
-
                                 }}
                             />
-
-
                         </View>
                     ),
-
                 }}
             />
         </Tab.Navigator>
-
     );
 }
-
 
 const Drawer = createDrawerNavigator();
 function MyDrawer() {
     return (
         <Drawer.Navigator initialRouteName="CieKawa"
-                          screenOptions={{
-
-                              drawerActiveTintColor: "#000000",
-                              drawerStyle: {
-                                  backgroundColor: "#d94214",
-                                  width: 180,
-
-                              },
-
-
-                          }}
+            screenOptions={{
+                drawerActiveTintColor: "#000000",
+                drawerStyle: {
+                    backgroundColor: "#d94214",
+                    width: 180,
+                },
+            }}
         >
             <Drawer.Screen options={{ headerShown: false }} name="Home" component={HomeScreen} />
             <Drawer.Screen name="Menu" component={MyTab} />

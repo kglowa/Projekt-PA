@@ -8,7 +8,7 @@ const DATA = [
   {
     id: "1",
     title: "Red Gentelman",
-    describe:"50ml red stag JimBeam\n30ml wisniowka Saska\ncwiartka cytryny\ndopełnić wodą gazowaną",
+    describe:"50ml red stag JimBeam\n30ml wiśniówka Saska\nćwiartka cytryny\ndopełnić wodą gazowaną",
     price:"20PLN",
 
   },
@@ -23,7 +23,7 @@ const DATA = [
   {
     id: "3",
     title: "Bitter Pink",
-    describe:"50ml gin truskawkowy Bosford\ntruskawki\ndopelnic schwepsem pink tonic",
+    describe:"50ml gin truskawkowy Bosford\ntruskawki\ndopełnić schwepsem pink tonic",
     price:"4PLN",
 
 
@@ -31,7 +31,7 @@ const DATA = [
   {
     id: "4",
     title: "Cuba Libre",
-    describe:"50ml ciemnego rumu\nlimonka\ndopelnic cola",
+    describe:"50ml ciemnego rumu\nlimonka\ndopełnić colą",
     price:"14PLN",
 
 

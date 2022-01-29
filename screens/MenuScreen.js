@@ -15,7 +15,7 @@ const DATA = [
   {
     id: "2",
     title: "Orzeszki",
-    describe:"Slone/Cebula/Wasabi",
+    describe:"Słone/Cebula/Wasabi",
     price:"6PLN",
 
 
@@ -23,7 +23,7 @@ const DATA = [
   {
     id: "3",
     title: "Paluszki",
-    describe:"Slone/Sezamowe",
+    describe:"Słone/Sezamowe",
     price:"4PLN",
 
 
@@ -31,7 +31,7 @@ const DATA = [
   {
     id: "4",
     title: "Cola",
-    describe:"Zero/Zwykla/Wisniowa",
+    describe:"Zero/Zwykła/Wiśniowa",
     price:"4PLN",
 
 
@@ -39,7 +39,7 @@ const DATA = [
   {
     id: "5",
     title: "Sok",
-    describe:"Pomoranczowa/Jablko/Porzeczka",
+    describe:"Pomarańcza/Jabłko/Porzeczka",
     price:"4PLN",
 
 
