@@ -7,3 +7,5 @@ haslo: admin321
 85 linijka zmnienic na source ={require('./icons/beer.jpg')}
 
 expo install expo-haptics
+
+npm install --save react-native-calendars

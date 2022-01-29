@@ -44,10 +44,10 @@ const HomeScreen = ({ navigation }) => {
         <View>
 
           <Button
-            title="Zamowienia"
+            title="Zamówienia"
             color="#d94214"
             onPress={() => {
-              navigation.navigate("Zamowienia");
+              navigation.navigate("Zamówienia");
               Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy)
             }}
           />
@@ -66,9 +66,9 @@ const HomeScreen = ({ navigation }) => {
 
         <View>
           <Button
-            title="Czas pracy"
+            title="Grafik pracy"
             color="#d94214"
-            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Czas pracy") }}
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Grafik pracy") }}
           />
         </View>
         <Separator />
