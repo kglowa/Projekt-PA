@@ -73,6 +73,15 @@ const HomeScreen = ({ navigation }) => {
         </View>
         <Separator />
         <View>
+
+          <Button
+              title="Informacje"
+              color="#d94214"
+              onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Heavy); navigation.navigate("Informacje") }}
+          />
+        </View>
+        <Separator />
+        <View>
           <Button
             title="Wyloguj"
             color="#d94214"
