@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { View, TouchableOpacity,Text} from 'react-native';
 import {Agenda} from "react-native-calendars";
-import {Card, Avatar} from 'react-native-paper';
+import {Card} from 'react-native-paper';
 
 const timeToString = (time) => {
     const date = new Date(time);
@@ -10,7 +10,7 @@ const timeToString = (time) => {
 
 const RezerwacjeScreen= () => {
     const [items, setItems] = useState({});
-    const loadItems = (day) => {
+    const loadItems = () => {
         setTimeout(() => {
             const time = '2022-02-01';
                 const strTime = timeToString(time);
@@ -51,7 +51,6 @@ const RezerwacjeScreen= () => {
                                 alignItems: 'center',
                             }}>
                             <Text>{item.name}</Text>
-                            <Avatar.Text label="A" />
                         </View>
                     </Card.Content>
                 </Card>

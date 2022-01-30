@@ -9,7 +9,6 @@ import HomeScreen from './screens/HomeScreen';
 import MenuScreen from './screens/MenuScreen';
 import ZamowieniaScreen from './screens/ZamowieniaScreen';
 import RezerwacjeScreen from './screens/RezerwacjeScreen';
-import RachunkiScreen from './screens/RachunkiScreen';
 import GrafikScreen from './screens/GrafikScreen';
 import InformacjeScreen from './screens/InformacjeScreen';
 import DrinkScreen from './screens/DrinkScreen';
@@ -104,7 +103,6 @@ function MyDrawer() {
             <Drawer.Screen name="Menu" component={MyTab} />
             <Drawer.Screen name="Rezerwacje" component={RezerwacjeScreen} />
             <Drawer.Screen name="Zamówienia" component={ZamowieniaScreen} />
-            <Drawer.Screen name="Rachunki" component={RachunkiScreen} />
             <Drawer.Screen name="Grafik pracy" component={GrafikScreen} />
             <Drawer.Screen name="Informacje" component={InformacjeScreen} />
         </Drawer.Navigator>
