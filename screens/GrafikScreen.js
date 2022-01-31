@@ -8,7 +8,6 @@ const GrafikScreen = ({ navigation }) => {
     <>
       <Calendar
         firstDay={1}
-        hideArrows={true}
         minDate={'2022-01-01'}
         maxDate={'2022-12-31'}
         markingType="multi-period"
@@ -142,6 +141,147 @@ const GrafikScreen = ({ navigation }) => {
             ]
           },
           '2022-01-31': {
+            periods: [
+              { startingDay: true, endingDay: false, color: '#DBA901' },
+              { startingDay: true, endingDay: false, color: '#5FB404' },//zielony jasny
+              { startingDay: true, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-01': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#DBA901' },//zolty
+              { startingDay: false, endingDay: false, color: '#5FB404' },//zielony jasny
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }//rozowo/fiolet
+            ]
+          },
+          '2022-02-02': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#DBA901' },
+              { startingDay: false, endingDay: false, color: '#5FB404' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-03': {
+            periods: [
+              { startingDay: false, endingDay: true, color: '#DBA901' },
+              { startingDay: false, endingDay: false, color: '#5FB404' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-04': {
+            periods: [
+              { startingDay: true, endingDay: true, color: '#6E6E6E' },//szary
+              { startingDay: false, endingDay: true, color: '#5FB404' },  
+              { startingDay: false, endingDay: true, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-07': {
+            periods: [
+              { startingDay: true, endingDay: false, color: '#5FB404' },
+              { startingDay: true, endingDay: true, color: '#6E6E6E' },
+              { startingDay: true, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-08': {
+            periods: [
+              { startingDay: false, endingDay: true, color: '#5FB404' },
+              { color: 'transparent' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-09': {
+            periods: [
+              { startingDay: true, endingDay: false, color: '#DBA901' },
+              { startingDay: true, endingDay: false, color: '#6E6E6E' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-10': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#DBA901' },
+              { startingDay: false, endingDay: false, color: '#6E6E6E' },
+              { startingDay: false, endingDay: true, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-11': {
+            periods: [
+              { startingDay: false, endingDay: true, color: '#DBA901' },
+              { startingDay: false, endingDay: true, color: '#6E6E6E' },
+              { startingDay: true, endingDay: true, color: '#5FB404' }
+            ]
+          },
+          '2022-02-14': {
+            periods: [
+              { startingDay: true, endingDay: true, color: '#5FB404' },
+              { startingDay: true, endingDay: false, color: '#6E6E6E' },
+              { startingDay: true, endingDay: false, color: '#DBA901' }
+            ]
+          },
+          '2022-02-15': {
+            periods: [
+              { color: 'transparent' },
+              { startingDay: false, endingDay: false, color: '#6E6E6E' },
+              { startingDay: false, endingDay: false, color: '#DBA901' }
+            ]
+          },
+          '2022-02-16': {
+            periods: [
+              { startingDay: true, endingDay: false, color: '#CC2EFA' },
+              { startingDay: false, endingDay: false, color: '#6E6E6E' },
+              { startingDay: false, endingDay: false, color: '#DBA901' }
+            ]
+          },
+          '2022-02-17': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#CC2EFA' },
+              { startingDay: false, endingDay: false, color: '#6E6E6E' },
+              { startingDay: false, endingDay: true, color: '#DBA901' }
+            ]
+          },
+          '2022-02-18': {
+            periods: [
+              { startingDay: false, endingDay: true, color: '#CC2EFA' },
+              { startingDay: false, endingDay: true, color: '#6E6E6E' },
+              { startingDay: true, endingDay: true, color: '#5FB404' }
+              
+            ]
+          },
+          '2022-02-21': {
+            periods: [
+              { startingDay: true, endingDay: true, color: '#5FB404' },
+              { startingDay: true, endingDay: false, color: '#6E6E6E' },
+              { startingDay: true, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-22': {
+            periods: [
+              { startingDay: true, endingDay: false, color: '#DBA901' },
+              { startingDay: false, endingDay: true, color: '#6E6E6E' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-23': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#DBA901' },
+              { color: 'transparent' },
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-24': {
+            periods: [
+              { startingDay: false, endingDay: false, color: '#DBA901' },
+              { startingDay: true, endingDay: false, color: '#5FB404' },//zielony jasny
+              { startingDay: false, endingDay: false, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-25': {
+            periods: [
+              { startingDay: false, endingDay: true, color: '#DBA901' },
+              { startingDay: false, endingDay: true, color: '#5FB404' },//zielony jasny
+              { startingDay: false, endingDay: true, color: '#CC2EFA' }
+            ]
+          },
+          '2022-02-28': {
             periods: [
               { startingDay: true, endingDay: true, color: '#DBA901' },
               { startingDay: true, endingDay: true, color: '#5FB404' },//zielony jasny
